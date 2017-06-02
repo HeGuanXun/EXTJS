@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<link rel="stylesheet" href="../resources/css/ext-all.css" />
+			
+		<title>属性</title>
+		<script type="text/javascript" src="../../adapter/ext/ext-base.js"></script>
+		<script type="text/javascript" src="../../ext-all.js"></script>
+		<script type="text/javascript" src="Person.js"></script>
+		<script type="text/javascript">
+
+			Ext.onReady(function () {//页面加载完毕
+
+                var orgPanel = new Ext.Panel({
+                    renderTo:Ext.getBody(),
+                    layout:"form",//指定form布局（布局类型）
+                    labelWidth:10,
+                    listeners:{
+                        "render":function(orgPanel){//render:当前对象呗正确构建后触发
+                                orgPanel.add(new Ext.form.TextField({//添加文本框
+                                id:"txt_name",
+                                fieldLabel:"姓名"
+                            }));
+                        }
+                    }});
+
+                new Ext.Button({
+                    text:"确定",
+                    maxWidth:200,
+                    renderTo:Ext.getBody(),//将当前对象所生成的HTML对象存放在指定的对象中
+
+                    handler:function () {
+                        alert(Ext.getCmp("txt_name").getValue());
+                    }
+                });
+
+            });
+
+
+			</script>
+	</head>
+	<body>
+
+	<form>
+
+
+	</form>
+
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../resources/css/ext-all.css" />
+
+    <title>登录界面</title>
+
+    <script type="text/javascript" src="../../adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../ext-all.js"></script>
+    <script type="text/javascript">
+
+
+        Ext.onReady(function () {//页面加载完毕
+
+            var window = new Ext.Window({
+                title:"窗口登录",
+                frame:true,
+                width:350,
+                height:180,
+                layout:"form",
+                labelWidth:55,
+                plain:true,
+                resizable:false,//固定窗口大小
+                bodyStyle:"padding:25px;background-color:white",//可以设置css样式
+                defaults:{xtype:"textfield",width:180},
+                buttonAlign:"center",//按钮的位置
+                items:[{
+                    fieldLabel:"账号"
+                },{
+                    fieldLabel:"密码"
+                }],
+
+                buttons:[{
+                    text:"确定"
+                },{
+                    text:"取消"
+                }]
+
+            });
+
+
+            window.show();
+        });
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

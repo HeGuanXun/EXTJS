@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../resources/css/ext-all.css" />
+
+    <title>登录界面</title>
+
+    <style type="text/css">
+        .contain{
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+        }
+        .center{
+            position: absolute;
+            top: 30%;
+            left: 43%;
+            text-align: left;
+        }
+    </style>
+
+    <script type="text/javascript" src="../adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../ext-all.js"></script>
+    <script type="text/javascript">
+
+
+        Ext.onReady(function () {//页面加载完毕
+
+            var _panel = new Ext.Panel({
+                title:"登录界面",
+                frame:true,
+                width:360,
+                height:130,
+                layout:"form",
+                labelWith:450,
+                defaults:{xtype:"textfield",width:180},
+                items:[{
+                    fieldLabel:"账号"
+                },{
+                    fieldLabel:"密码"
+                }],
+
+                buttons:[{
+                    text:"确定"
+                },{
+                    text:"取消"
+                }]
+
+            });
+
+            _panel.applyToMarkup(Ext.DomHelper.append(Ext.getBody(),{
+                tag:"div",
+                cls:"contain",
+                cn:[{
+                    tag:"div",
+                    cls:"center"
+                }]
+            },true).child("div"));
+        });
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
